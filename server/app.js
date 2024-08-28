@@ -23,7 +23,7 @@ app.use(cookieParser());
 app.use('/api/user-posts', authenticate);
 app.use(
   cors({
-    origin: 'https://blog-app-mir.vercel.app',
+    origin: ['http://localhost:5173', 'https://blog-app-mir.vercel.app'],
     credentials: true,
   })
 );
