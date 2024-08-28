@@ -8,7 +8,7 @@ export const getUserPosts = async () => {
       }
     );
     if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
+      console.log(error);
     }
     const posts = await response.json();
     return posts;
