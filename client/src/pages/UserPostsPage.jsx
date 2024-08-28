@@ -9,9 +9,7 @@ const UserPostsPage = () => {
     const fetchUserPosts = async () => {
       try {
         const data = await getUserPosts();
-        if (Array.isArray(data)) {
-          setPosts(data);
-        }
+        setPosts(data);
       } catch (error) {
         console.error('Error al obtener los artículos');
       }

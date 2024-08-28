@@ -9,7 +9,7 @@ const postSchema = new Schema(
     summary: { type: String, required: true },
     content: { type: String, required: true },
     category: { type: String, required: true },
-    user: { type: Schema.Types.ObjectId, ref: 'User' }, // Referencia al usuario
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
   },
   {
     timestamps: true,
