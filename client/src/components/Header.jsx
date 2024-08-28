@@ -36,7 +36,7 @@ export const Header = () => {
   }, [showProfileMenu]);
 
   const logout = () => {
-    fetch('http://localhost:8080/api/logout', {
+    fetch('https://blog-app-server-three.vercel.app/api/logout', {
       credentials: 'include',
       method: 'POST',
     });

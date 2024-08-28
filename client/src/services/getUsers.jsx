@@ -1,9 +1,12 @@
 export const getUsers = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/users', {
-      method: 'GET',
-      credentials: 'include',
-    });
+    const response = await fetch(
+      'https://blog-app-server-three.vercel.app/api/users',
+      {
+        method: 'GET',
+        credentials: 'include',
+      }
+    );
     const users = response.json();
     return users;
   } catch (error) {

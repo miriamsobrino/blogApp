@@ -72,20 +72,18 @@ const CreatePostPage = () => {
         category,
         file: downloadUrl,
       };
-      /*  const formData = new FormData();
-      formData.set('title', title);
-      formData.set('summary', summary);
-      formData.set('content', content);
-      formData.set('category', category);
-      formData.set('file', downloadUrl);*/
-      const response = await fetch('http://localhost:8080/api/posts', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(postData),
-        credentials: 'include',
-      });
+
+      const response = await fetch(
+        'https://blog-app-server-three.vercel.app/api/posts',
+        {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(postData),
+          credentials: 'include',
+        }
+      );
 
       if (response.ok) {
         alert('Post creado con éxito!');

@@ -34,7 +34,7 @@ export const CardPost = ({ post, onDelete }) => {
         { indent: '-1' },
         { indent: '+1' },
       ],
-      ['link', 'image'],
+      ['link'],
       ['clean'],
     ],
   };
@@ -50,7 +50,7 @@ export const CardPost = ({ post, onDelete }) => {
     'bullet',
     'indent',
     'link',
-    'image',
+    ,
   ];
 
   useEffect(() => {

@@ -34,10 +34,13 @@ export const deletePostWithImage = async (id, imageUrl) => {
   try {
     const storageRef = ref(storage, imageUrl);
     await deleteObject(storageRef);
-    const response = await fetch(`http://localhost:8080/api/post/${id}`, {
-      method: 'DELETE',
-      credentials: 'include',
-    });
+    const response = await fetch(
+      `https://blog-app-server-three.vercel.app/api/post/${id}`,
+      {
+        method: 'DELETE',
+        credentials: 'include',
+      }
+    );
 
     if (!response.ok) {
       throw new Error('Error al eliminar el artículo');
@@ -51,11 +54,14 @@ export const deletePostWithImage = async (id, imageUrl) => {
 
 export const updatePost = async (id, formData) => {
   try {
-    const response = await fetch(`http://localhost:8080/api/post/${id}`, {
-      method: 'PUT',
-      credentials: 'include',
-      body: formData,
-    });
+    const response = await fetch(
+      `https://blog-app-server-three.vercel.app/api/post/${id}`,
+      {
+        method: 'PUT',
+        credentials: 'include',
+        body: formData,
+      }
+    );
     return response.json();
   } catch (error) {
     throw new Error(error.message);
