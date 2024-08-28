@@ -43,7 +43,7 @@ const RegisterPage = () => {
     }
   };
   return (
-    <div className='w-[20%] mx-auto mt-20 '>
+    <div className=' lg:w-[20%] w-full px-6 lg:px-0 mx-auto mt-20 '>
       <h2 className='text-2xl font-bold text-center mb-2'>Registro</h2>
       <form
         onSubmit={handleSubmit}

@@ -6,7 +6,7 @@ import { Button } from './Button';
 
 export const Post = () => {
   const {
-    filteredPosts,
+    filteredPosts = [],
     loading: globalLoading,
     activeCategory,
   } = useContext(AppContext);
@@ -56,7 +56,7 @@ export const Post = () => {
         currentPosts.map((post) => (
           <article
             key={post._id}
-            className='my-4 flex gap-4 justify-start items-center '
+            className='my-4 flex flex-col lg:flex-row gap-4 justify-start items-center '
           >
             <img
               src={post.file}

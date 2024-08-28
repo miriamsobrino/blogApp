@@ -10,10 +10,10 @@ export const Aside = () => {
   };
 
   return (
-    <section className='w-[20%] mt-1'>
+    <section className='w-full lg:w-[20%] mt-1'>
       <h2 className='text-2xl font-bold'>Categorías</h2>
       <div className='border-b-2 border-gray-200 mt-2'></div>
-      <ul className='mt-4  flex-col flex gap-2'>
+      <ul className='mt-4 flex-wrap lg:flex-col flex gap-2'>
         {categories.map((category) => (
           <li key={category._id}>
             <BadgeInteractive

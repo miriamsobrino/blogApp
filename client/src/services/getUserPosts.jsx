@@ -7,7 +7,7 @@ export const getUserPosts = async () => {
         credentials: 'include',
       }
     );
-    const posts = response.json();
+    const posts = await response.json();
     return posts;
   } catch (error) {
     console.error('Error:', error);

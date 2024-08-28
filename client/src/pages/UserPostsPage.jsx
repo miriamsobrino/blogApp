@@ -2,13 +2,16 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import { getUserPosts } from '../services/getUserPosts';
 import { CardPost } from '../components/CardPost';
+
 const UserPostsPage = () => {
   const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchUserPosts = async () => {
       try {
         const data = await getUserPosts();
-        setPosts(data);
+        if (Array.isArray(data)) {
+          setPosts(data);
+        }
       } catch (error) {
         console.error('Error al obtener los artículos');
       }

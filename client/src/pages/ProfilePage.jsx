@@ -69,7 +69,7 @@ const ProfilePage = () => {
   };
 
   return (
-    <div className='w-[60%] mt-10 mx-auto flex-col flex gap-4 items-center justify-center'>
+    <div className='w-[60%] lg:mt-10 mt-14 mx-auto flex-col flex gap-4 items-center justify-center'>
       <h2 className='text-3xl font-bold'>Editar perfil</h2>
       <div className='relative w-60 h-60 cursor-pointer '>
         <img
@@ -82,7 +82,7 @@ const ProfilePage = () => {
         </div>
       </div>
       <form className='flex flex-col gap-4' onSubmit={handleSubmit}>
-        <div className='flex gap-2'>
+        <div className='flex lg:flex-row flex-col gap-2'>
           <label>Nombre de usuario:</label>
           <input
             type='text'
@@ -92,7 +92,7 @@ const ProfilePage = () => {
             className='border px-2 rounded flex-1'
           />
         </div>
-        <div className='flex gap-2'>
+        <div className='flex lg:flex-row flex-col gap-2'>
           <label>Email:</label>
           <input
             type='email'
