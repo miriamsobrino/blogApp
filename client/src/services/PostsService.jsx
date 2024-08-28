@@ -3,10 +3,13 @@ import { storage } from './firebase';
 
 export const getPosts = async () => {
   try {
-    const response = await fetch('http://localhost:8080/api/posts', {
-      method: 'GET',
-      credentials: 'include',
-    });
+    const response = await fetch(
+      'https://blog-app-server-mir.vercel.app/api/posts',
+      {
+        method: 'GET',
+        credentials: 'include',
+      }
+    );
     const posts = response.json();
     return posts;
   } catch (error) {
@@ -17,10 +20,13 @@ export const getPosts = async () => {
 
 export const getPostDetail = async (id) => {
   try {
-    const response = await fetch(`http://localhost:8080/api/post/${id}`, {
-      method: 'GET',
-      credentials: 'include',
-    });
+    const response = await fetch(
+      `https://blog-app-server-mir.vercel.app/api/post/${id}`,
+      {
+        method: 'GET',
+        credentials: 'include',
+      }
+    );
 
     const postInfo = response.json();
     return postInfo;
@@ -35,7 +41,7 @@ export const deletePostWithImage = async (id, imageUrl) => {
     const storageRef = ref(storage, imageUrl);
     await deleteObject(storageRef);
     const response = await fetch(
-      `https://blog-app-server-three.vercel.app/api/post/${id}`,
+      `https://blog-app-server-mir.vercel.app/api/post/${id}`,
       {
         method: 'DELETE',
         credentials: 'include',
@@ -55,7 +61,7 @@ export const deletePostWithImage = async (id, imageUrl) => {
 export const updatePost = async (id, formData) => {
   try {
     const response = await fetch(
-      `https://blog-app-server-three.vercel.app/api/post/${id}`,
+      `https://blog-app-server-mir.vercel.app/api/post/${id}`,
       {
         method: 'PUT',
         credentials: 'include',

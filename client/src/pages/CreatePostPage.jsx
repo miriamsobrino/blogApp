@@ -74,7 +74,7 @@ const CreatePostPage = () => {
       };
 
       const response = await fetch(
-        'https://blog-app-server-three.vercel.app/api/posts',
+        'https://blog-app-server-mir.vercel.app/api/posts',
         {
           method: 'POST',
           headers: {

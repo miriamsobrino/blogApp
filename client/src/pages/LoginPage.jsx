@@ -14,7 +14,7 @@ const LoginPage = () => {
 
     try {
       const response = await fetch(
-        'https://blog-app-server-three.vercel.app/api/login',
+        'https://blog-app-server-mir.vercel.app/api/login',
         {
           method: 'POST',
           body: JSON.stringify({ email, password }),

@@ -1,7 +1,7 @@
 export const getCategories = async () => {
   try {
     const response = await fetch(
-      'https://blog-app-server-three.vercel.app/api/categories',
+      'https://blog-app-server-mir.vercel.app/api/categories',
       {
         method: 'GET',
         credentials: 'include',

@@ -6,7 +6,7 @@ const RegisterPage = () => {
   const [username, setUserName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [file] = useState('http://localhost:5173/public/user.webp');
+  const [file] = useState('https://blog-app-mir.vercel.app/public/user.webp');
 
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
@@ -23,11 +23,14 @@ const RegisterPage = () => {
       const blob = await responseFile.blob();
       formData.set('file', blob, 'user.webp');*/
 
-      const response = await fetch('http://localhost:8080/api/register', {
-        method: 'POST',
-        body: formData,
-        credentials: 'include',
-      });
+      const response = await fetch(
+        'https://blog-app-server-mir.vercel.app/api/register',
+        {
+          method: 'POST',
+          body: formData,
+          credentials: 'include',
+        }
+      );
 
       if (response.ok) {
         alert('Ha sido registrado con éxito!');

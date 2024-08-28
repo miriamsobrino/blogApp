@@ -1,7 +1,7 @@
 export const getUsers = async () => {
   try {
     const response = await fetch(
-      'https://blog-app-server-three.vercel.app/api/users',
+      'https://blog-app-server-mir.vercel.app/api/users',
       {
         method: 'GET',
         credentials: 'include',

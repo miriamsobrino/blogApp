@@ -23,12 +23,10 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: 'http://localhost:5173',
+    origin: 'https://blog-app-mir.vercel.app/',
     credentials: true,
   })
 );
-
-/*app.use('/uploads', express.static('uploads'));*/
 
 app.get('/', (req, res) => {
   res.send('Hello!');
@@ -52,7 +50,7 @@ app.post('/api/register', uploadMiddleware.none(), async (req, res) => {
       username,
       email,
       password: bcrypt.hashSync(password, salt),
-      file: file || 'http://localhost:5173/public/user.webp',
+      file: file || 'https://blog-app-mir.vercel.app/public/user.webp',
     });
     res.json(userInfo);
   } catch {

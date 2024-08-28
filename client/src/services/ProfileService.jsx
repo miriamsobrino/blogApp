@@ -1,7 +1,7 @@
 export const getProfile = async () => {
   try {
     const response = await fetch(
-      'https://blog-app-server-three.vercel.app/api/profile',
+      'https://blog-app-server-mir.vercel.app/api/profile',
       {
         method: 'GET',
         credentials: 'include',
@@ -17,7 +17,7 @@ export const getProfile = async () => {
 
 export const updateProfile = async (profileData) => {
   const response = await fetch(
-    'https://blog-app-server-three.vercel.app/api/profile',
+    'https://blog-app-server-mir.vercel.app/api/profile',
     {
       method: 'PUT',
       credentials: 'include',
