@@ -47,7 +47,7 @@ export const Post = () => {
   }, [activeCategory]);
 
   return (
-    <div className='flex flex-col gap-2'>
+    <div className='flex flex-col gap-2 '>
       {isLoading ? (
         <div className='flex justify-center items-center h-64'>
           <span className='loader'></span>
@@ -56,7 +56,7 @@ export const Post = () => {
         currentPosts.map((post) => (
           <article
             key={post._id}
-            className='my-4 flex flex-col lg:flex-row gap-4 justify-start items-center '
+            className='my-4 flex flex-col lg:flex-row gap-4 justify-start lg:items-center '
           >
             <img
               src={post.file}
@@ -76,7 +76,7 @@ export const Post = () => {
 
               <div>
                 <Badge>{post.category}</Badge>
-                <p className='font-bold text-xl mt-4 line-clamp-1'>
+                <p className='font-bold text-xl mt-4 line-clamp-2 lg:line-clamp-1'>
                   {post.title}
                 </p>
 

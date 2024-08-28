@@ -95,12 +95,12 @@ export const Header = () => {
           <h1 className='text-3xl font-bold'>BlogApp</h1>
         </Link>
         <form
-          className='flex lg:static absolute top-20  w-full items-center gap-2 lg:mr-4 lg:ml-0 '
+          className='flex lg:static absolute top-20 w-[340px] lg:w-full pr-4 lg:pr-0 items-center gap-2 lg:mr-4 lg:ml-0 '
           onSubmit={handleSubmit}
         >
           <input
             placeholder='Buscar...'
-            className='border-2 border-slate-100 py-1 w-[280px] lg:w-full rounded-md  lg:ml-20  px-2 '
+            className='border-2 border-slate-100 py-1 w-full rounded-md  lg:ml-20  px-2 '
             value={value}
             onChange={(e) => setValue(e.target.value)}
           />

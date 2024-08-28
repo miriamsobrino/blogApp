@@ -19,11 +19,14 @@ const PostDetailPage = () => {
   }, [id]);
 
   return (
-    <article className='w-[60%] mx-auto px-8 items-center justify-center flex flex-col gap-8 text-pretty text-left m-10'>
-      <img className='w-[60%] object-contain' src={post.file} />
+    <article className='lg:w-[60%] mx-auto px-8 items-center justify-center flex flex-col gap-8 text-pretty text-left m-10'>
+      <img
+        className='lg:w-[60%] w-[600px] mt-6 lg:mt-0 object-contain'
+        src={post.file}
+      />
       {post.user && (
         <div className='flex'>
-          <small>Creado por @{post.user.username}</small>
+          <small>Escrito por @{post.user.username}</small>
           <img
             className='w-6 h-6 rounded-full object-cover mx-2'
             src={post.user.file}
