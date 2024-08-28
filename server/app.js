@@ -20,7 +20,7 @@ config();
 connectDB();
 app.use(express.json());
 app.use(cookieParser());
-
+app.use('/api/user-posts', authenticate);
 app.use(
   cors({
     origin: 'https://blog-app-mir.vercel.app',

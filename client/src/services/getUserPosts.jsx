@@ -7,6 +7,9 @@ export const getUserPosts = async () => {
         credentials: 'include',
       }
     );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
     const posts = await response.json();
     return posts;
   } catch (error) {
