@@ -23,7 +23,7 @@ app.use(cookieParser());
 
 app.use(
   cors({
-    origin: ['http://localhost:5173', 'https://blog-app-mir.vercel.app'],
+    origin: 'https://blog-app-mir.vercel.app',
     credentials: true,
   })
 );
@@ -77,7 +77,7 @@ app.post('/api/login', async (req, res) => {
           .cookie('token', token, {
             httpOnly: true,
             secure: false,
-            sameSite: 'strict',
+            sameSite: 'lax',
           })
           .json({
             id: userInfo._id,
