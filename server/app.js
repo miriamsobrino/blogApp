@@ -246,7 +246,7 @@ app.put('/api/post/:id', uploadMiddleware.single('file'), async (req, res) => {
   }
 });
 
-app.get('/api/user-posts', authenticate, async (req, res) => {
+app.get('/api/user-posts', async (req, res) => {
   try {
     const userId = req.user._id;
     const posts = await Post.find({ user: userId }).sort({ createdAt: -1 });
