@@ -24,7 +24,7 @@ export const Header = () => {
   const hamburgerRef = useRef(null);
 
   const logout = () => {
-    fetch('https://blog-app-server-three.vercel.app/api/logout', {
+    fetch('https://blog-app-server-mir.vercel.app/api/logout', {
       credentials: 'include',
       method: 'POST',
     });
