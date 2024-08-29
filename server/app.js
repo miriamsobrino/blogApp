@@ -20,7 +20,6 @@ config();
 connectDB();
 app.use(express.json());
 app.use(cookieParser());
-app.use('/api/user-posts', authenticate);
 app.use(
   cors({
     origin: ['http://localhost:5173', 'https://blog-app-mir.vercel.app'],
@@ -141,8 +140,8 @@ app.post('/api/logout', (req, res) => {
   res
     .clearCookie('token', {
       httpOnly: true,
-      secure: false,
-      sameSite: 'strict',
+      secure: true,
+      sameSite: 'none',
     })
     .json({ message: 'Logged out successfully' });
 });

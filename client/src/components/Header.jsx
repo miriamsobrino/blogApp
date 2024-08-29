@@ -76,7 +76,8 @@ export const Header = () => {
       if (
         isMobileMenuOpen &&
         mobileMenuRef.current &&
-        !mobileMenuRef.current.contains(event.target)
+        !mobileMenuRef.current.contains(event.target) &&
+        !hamburgerRef.current.contains(event.target)
       ) {
         setIsMobileMenuOpen(false);
       }
@@ -109,26 +110,29 @@ export const Header = () => {
           </button>
         </form>
         {!email && (
-          <RxHamburgerMenu
-            size={24}
-            className='lg:hidden cursor-pointer'
+          <div
             onClick={toggleMobileMenu}
-          />
+            ref={hamburgerRef}
+            className='lg:hidden cursor-pointer'
+          >
+            <RxHamburgerMenu size={24} />
+          </div>
         )}
 
         <div
           ref={mobileMenuRef}
           className={`lg:flex gap-4 items-center ${
             isMobileMenuOpen
-              ? 'block absolute top-16 right-0 text-center w-full bg-gray-50 lg:bg-transparent lg:py-0 py-6'
+              ? 'block absolute top-16 right-0 text-center w-full bg-white drop-shadow-md lg:drop-shadow-none lg:bg-transparent lg:py-0 pb-8 py-6'
               : 'hidden'
           } lg:block`}
         >
           {!email && (
-            <ul className='lg:ml-4 flex flex-col lg:flex-row lg:gap-4  items-center  lg:pr-0 pr-6 '>
-              <li className='border-b-2 border-slate-100 lg:border-none w-full'>
+            <ul className='lg:ml-4 flex flex-col lg:flex-row lg:gap-4  items-center  lg:pr-0 px-6 '>
+              <li className=' lg:border-none w-full'>
                 <Link to='/register'>Registrarse</Link>
               </li>
+              <div class='lg:hidden h-[2px] bg-slate-100 w-full mt-2 mb-2'></div>
               <li>
                 <Link
                   className='lg:bg-sky-500 lg:py-1 lg:px-2 flex items-center gap-2 lg:font-bold lg:rounded-md lg:text-white'
