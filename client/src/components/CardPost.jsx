@@ -175,10 +175,10 @@ export const CardPost = ({ post, onDelete }) => {
       </div>
       <dialog
         ref={dialogRef}
-        className='backdrop:bg-black/70  p-4 rounded  '
+        className='backdrop:bg-black/70  p-4 rounded w-full lg:w-[30%] mx-auto top-80 lg:static '
         onClick={handleOutsideClick}
       >
-        <div className='bg-white p-6 rounded '>
+        <div className='bg-white p-6 rounded text-center'>
           <h4 className='text-lg font-bold'>Confirmar eliminación</h4>
           <p>¿Estás seguro de que deseas eliminar este post?</p>
           <div className='flex justify-center mt-4 gap-2'>
@@ -194,7 +194,7 @@ export const CardPost = ({ post, onDelete }) => {
       </dialog>
       <dialog
         ref={dialogRefv2}
-        className='backdrop:bg-black/70  p-4 rounded  w-[50%]'
+        className='backdrop:bg-black/70  p-4 rounded  lg:w-[50%]  w-full mx-auto top-40 lg:static'
         onClick={handleOutsideClick}
       >
         <form
@@ -227,11 +227,11 @@ export const CardPost = ({ post, onDelete }) => {
             modules={modules}
             formats={formats}
           />
-          <div className='flex gap-2 justify-between items-center '>
+          <div className='flex gap-2 justify-between items-center pt-8 lg:pt-0'>
             <label>Categoría</label>
             <select
               value={category}
-              className='border-2 border-gray-200 rounded-md w-9/12'
+              className='border-2 border-gray-200 rounded-md w-full'
               onChange={(e) => setCategory(e.target.value)}
             >
               {categories
